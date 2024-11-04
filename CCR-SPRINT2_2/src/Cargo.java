@@ -1,0 +1,6 @@
+public enum Cargo {
+    SEGURANCA,
+    TECNICO_MANUTENCAO,
+    ATENDENTE_PLATAFORMA,
+    LIMPEZA
+}

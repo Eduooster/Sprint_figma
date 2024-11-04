@@ -29,13 +29,6 @@ public class Notificacao {
         this.statusVisualizacao = true;
     }
 
-    public void marcarComoNaoVisualizada() {
-        this.statusVisualizacao = false;
-    }
-
-
-
-
 
     private String gerarPrioridadeAleatoria() {
         Random random = new Random();
@@ -66,21 +59,6 @@ public class Notificacao {
         return statusVisualizacao;
     }
 
-    public void setStatus(Boolean status) {
-        this.statusVisualizacao = status;
-    }
-
-    public void setMensagem(String mensagem) {
-        this.mensagem = mensagem;
-    }
-    public void setPrioridade(String prioridade) {
-        this.prioridade = prioridade;
-    }
-
-    public void setEvento(Evento evento) {
-        this.evento = evento;
-    }
-
 
     public void setNotificaoCargo(Notificacao notificacaoReportada, List<Funcionario> bancoDadosFuncionarios){
 
@@ -90,7 +68,7 @@ public class Notificacao {
                     funcionario.getHistorico().setEventos(evento);
                     funcionario.setNotificacoes(notificacaoReportada);
                 });
-        System.out.println("Foi reportado");
+        System.out.println("Reporte concluido!");
     }
 
 
@@ -112,12 +90,11 @@ public class Notificacao {
     @Override
     public String
     toString() {
-        return "Notificacao{" +
-                "mensagem='" + mensagem + '\'' +
-                ", prioridade='" + prioridade + '\'' +
-                ", evento=" + evento +
-                ", Visualizado: '" + statusVisualizacao + '\'' +
-                '}';
+        return "Notificacao" + "\n" +
+                "Mensagem: " + mensagem + '\n' +
+                "Prioridade: " + prioridade + '\n' +
+                "Evento: " + evento + '\n' +
+                "Visualizado: " + statusVisualizacao + "\n";
     }
 }
 

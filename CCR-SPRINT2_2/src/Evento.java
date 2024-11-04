@@ -2,30 +2,30 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Evento {
-    private String nome;
+    private TipoEvento nomeEvento;
     private String Descricao;
     private String status_atual;//Default:Pendente...No futuro:(Em andamento/Resolvido)
     private String local;
     private Date data;
-    private String cargoAlvo;
+    private Cargo cargoAlvo;
 
     public Evento() {
     }
-    public Evento(String nome, String descricao, String status_atual, String local, String cargoAlvo) {
-        this.nome = nome;
+    public Evento(TipoEvento nomeEvento, String descricao, String status_atual, String local, Cargo cargoAlvo) {
+        this.nomeEvento = nomeEvento;
         this.Descricao = descricao;
         this.status_atual = status_atual;
-        this.local = local;
         this.cargoAlvo = cargoAlvo;
+        this.local = local;
         this.data = new Date();
 
     }
-    public String getNome() {
-        return nome;
+    public TipoEvento getNome() {
+        return nomeEvento;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(TipoEvento nome) {
+        this.nomeEvento = nome;
     }
 
     public String getDescricao() {
@@ -56,17 +56,14 @@ public class Evento {
         return data;
     }
 
-    public void setData(Date data) {
-        this.data = data;
-    }
 
-    public String getCargoAlvo() {
+    public Cargo getCargoAlvo() {
         return cargoAlvo;
     }
 
-    public void setCargoAlvo(String cargoAlvo) {
-        this.cargoAlvo = cargoAlvo;
-    }
+
+
+
 
 
 
@@ -88,7 +85,7 @@ public class Evento {
     @Override
     public String toString() {
         return "Evento: " +
-                "nome " + nome + '\'' +
+                "nome " + nomeEvento + '\'' +
                 ", Descricao: " + Descricao + '\'' +
                 ", status_atual: '" + status_atual + '\'' +
                 ", local: " + local + '\'' +
